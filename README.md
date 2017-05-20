@@ -1,2 +1,2 @@
 # diplomaPMArepo
-diploma for coma
+just commit and have fun

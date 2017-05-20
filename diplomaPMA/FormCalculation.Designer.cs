@@ -39,6 +39,7 @@
             this.Name = "FormCalculation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCalculation";
+            this.Load += new System.EventHandler(this.FormCalculation_Load);
             this.ResumeLayout(false);
 
         }

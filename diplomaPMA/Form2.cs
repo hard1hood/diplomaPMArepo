@@ -28,22 +28,17 @@ namespace diplomaPMA
             Application.Exit();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 f = new Form2();
+            FormCalculation f = new FormCalculation();
             f.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 f = new Form2();
+            FormPrediction f = new FormPrediction();
             f.Show();
         }
     }

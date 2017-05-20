@@ -15,6 +15,16 @@ namespace diplomaPMA
         public FormPrediction()
         {
             InitializeComponent();
+            FormClosed += FormPrediction_Closed;
+        }
+
+        private void FormPrediction_Load(object sender, EventArgs e)
+        {
+
+        }
+        protected void FormPrediction_Closed(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

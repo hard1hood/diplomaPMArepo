@@ -69,6 +69,12 @@
     <Compile Include="FormPrediction.Designer.cs">
       <DependentUpon>FormPrediction.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormResults.Designer.cs">
+      <DependentUpon>FormResults.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

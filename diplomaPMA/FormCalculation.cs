@@ -15,6 +15,16 @@ namespace diplomaPMA
         public FormCalculation()
         {
             InitializeComponent();
+            FormClosed += FormCalculation_Closed;
+        }
+
+        private void FormCalculation_Load(object sender, EventArgs e)
+        {
+
+        }
+        protected void FormCalculation_Closed(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
