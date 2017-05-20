@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity; // работа с ентити фреймворком стартс хир
 
 namespace diplomaPMA
 {
+    
     public partial class FormCalculation : Form
     {
         public FormCalculation()
@@ -26,5 +28,28 @@ namespace diplomaPMA
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 f = new Form2();
+            f.Show();
+        }
+
+    }
+    public class User
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+
+    class UserContext : DbContext
+    {
+        public UserContext()
+            : base("user id=root;password=oracle;server=localhost;database=diploma")
+        { }
+
+        public DbSet<User> Users { get; set; }
     }
 }

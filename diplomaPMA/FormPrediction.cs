@@ -26,5 +26,12 @@ namespace diplomaPMA
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 f = new Form2();
+            f.Show();
+        }
     }
 }
