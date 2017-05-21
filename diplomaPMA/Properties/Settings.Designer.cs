@@ -26,10 +26,30 @@ namespace diplomaPMA.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("user id=root;password=oracle;server=localhost;database=diploma")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost; Port=3306; Database=diploma; Uid=root; Pwd=oracle;")]
         public string diplomaConnectionString {
             get {
                 return ((string)(this["diplomaConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("user id=root;password=oracle;server=localhost;database=diploma")]
+        public string diplomaConnectionString1 {
+            get {
+                return ((string)(this["diplomaConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=oracle;database=diploma")]
+        public string diplomaConnectionString2 {
+            get {
+                return ((string)(this["diplomaConnectionString2"]));
             }
         }
     }

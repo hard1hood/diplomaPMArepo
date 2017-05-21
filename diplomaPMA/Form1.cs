@@ -27,7 +27,9 @@ namespace diplomaPMA
 
         private void label1_Click(object sender, EventArgs e)
         {
-           
+            this.Hide();
+            Form2 f = new Form2();
+            f.Show();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
