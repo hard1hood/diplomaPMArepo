@@ -71,7 +71,9 @@ namespace diplomaPMA
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string ID = comboBox1.SelectedValue.ToString();
-            button2_Click();
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -165,7 +167,54 @@ namespace diplomaPMA
             label13.Text = Data.Costs.ToString();
         }
 
+        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
+        {
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
+        }
 
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
+        }
+
+        private void numericUpDown4_ValueChanged(object sender, EventArgs e)
+        {
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
+        }
     }
 }
     

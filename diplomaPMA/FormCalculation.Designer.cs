@@ -116,9 +116,9 @@
             this.label4.Font = new System.Drawing.Font("Days", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(623, 194);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 19);
+            this.label4.Size = new System.Drawing.Size(46, 19);
             this.label4.TabIndex = 5;
-            this.label4.Text = "т/га";
+            this.label4.Text = "ц/га";
             // 
             // label5
             // 
@@ -162,6 +162,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "так";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -173,6 +174,7 @@
             this.radioButton2.TabIndex = 10;
             this.radioButton2.Text = "ні";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -208,6 +210,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 13;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // numericUpDown1
             // 
@@ -215,6 +218,7 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(121, 20);
             this.numericUpDown1.TabIndex = 16;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // numericUpDown2
             // 
@@ -233,6 +237,7 @@
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(121, 20);
             this.numericUpDown2.TabIndex = 17;
+            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
             // numericUpDown3
             // 
@@ -251,6 +256,7 @@
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(121, 20);
             this.numericUpDown3.TabIndex = 18;
+            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
             // 
             // numericUpDown4
             // 
@@ -263,6 +269,7 @@
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(47, 20);
             this.numericUpDown4.TabIndex = 19;
+            this.numericUpDown4.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
             // 
             // button2
             // 

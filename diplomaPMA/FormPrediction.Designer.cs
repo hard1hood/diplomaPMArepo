@@ -248,9 +248,9 @@
             this.label4.Font = new System.Drawing.Font("Days", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(627, 203);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 19);
+            this.label4.Size = new System.Drawing.Size(46, 19);
             this.label4.TabIndex = 27;
-            this.label4.Text = "т/га";
+            this.label4.Text = "ц/га";
             // 
             // label3
             // 
