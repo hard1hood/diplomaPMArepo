@@ -50,6 +50,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -198,9 +200,10 @@
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Немає",
-            "Елеватор",
-            "Рукав"});
+            "None",
+            "Elevator",
+            "Rukav",
+            "Angar"});
             this.comboBox2.Location = new System.Drawing.Point(493, 278);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
@@ -268,8 +271,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(475, 49);
             this.button2.TabIndex = 20;
-            this.button2.Text = "розраХУЙ";
+            this.button2.Text = "CALCULATE";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label9
             // 
@@ -301,11 +305,34 @@
             this.label11.TabIndex = 42;
             this.label11.Text = "га";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Days", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(135, 338);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(218, 19);
+            this.label12.TabIndex = 43;
+            this.label12.Text = "Розрахункова вартість:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Days", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label13.Location = new System.Drawing.Point(494, 330);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(56, 28);
+            this.label13.TabIndex = 44;
+            this.label13.Text = "0,0";
+            // 
             // FormCalculation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -365,6 +392,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
         // private diplomaDataSetTableAdapters.prognozTableAdapter prognozTableAdapter;
         //private diplomaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }

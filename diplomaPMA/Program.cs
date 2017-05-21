@@ -19,4 +19,18 @@ namespace diplomaPMA
             Application.Run(new Form1());
         }
     }
+    static class Data
+    {
+        public static string combobox1CalculateValue { get; set; }
+        public static int wetnessParamInt { get; set; }
+        public static float Costs { get; set; }
+        public static int chystkaParamInt { get; set; }
+        public static int zberParamInt{ get; set; }
+        public static string combobox6CalculateValue { get; set; }
+        public static string combobox7CalculateValue { get; set; }
+        public static string combobox8CalculateValue { get; set; }
+        public static string combobox9CalculateValue { get; set; }
+        public static string combobox10CalculateValue { get; set; }
+        public static string combobox11CalculateValue { get; set; }
+    }
 }

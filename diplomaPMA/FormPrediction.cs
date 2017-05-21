@@ -33,5 +33,13 @@ namespace diplomaPMA
             Form2 f = new Form2();
             f.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //FormResults f = new FormResults();
+            //f.Show();
+            label1.Text = Data.combobox1CalculateValue;
+            label4.Text = Data.Costs.ToString();
+        }
     }
 }

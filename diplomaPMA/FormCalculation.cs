@@ -15,7 +15,7 @@ namespace diplomaPMA
 
     public partial class FormCalculation : Form
     {
-       
+
         MySqlConnection con = new MySqlConnection("user id=root;password=oracle;server=localhost;database=diploma;");
 
         public FormCalculation()
@@ -23,7 +23,20 @@ namespace diplomaPMA
             InitializeComponent();
             FormClosed += FormCalculation_Closed;
         }
+        
+        protected override void OnPaint(PaintEventArgs e) //draw a line after last param 
+        {
+            base.OnPaint(e);
+            Graphics g;
 
+            g = e.Graphics;
+
+            Pen myPen = new Pen(Color.Black);
+            myPen.Width = 2;
+            g.DrawLine(myPen, 135, 318, 670, 318);
+
+            //g.DrawLine(myPen, 1, 1, 45, 65);
+        }
         private void FormCalculation_Load(object sender, EventArgs e)
         {
             comboBox2.SelectedIndex = 0;
@@ -34,7 +47,7 @@ namespace diplomaPMA
             reader = sc.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Columns.Add("vyd_z_k", typeof(string));
-   
+
             dt.Load(reader);
 
             comboBox1.ValueMember = "vyd_z_k";
@@ -58,36 +71,104 @@ namespace diplomaPMA
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string ID = comboBox1.SelectedValue.ToString();
+            button2_Click();
         }
 
-        /*private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            try
+            Data.combobox1CalculateValue = comboBox1.Text;
+
+            if ((int)numericUpDown1.Value < 14)
             {
+                Data.wetnessParamInt = 0;
+            }
+            else
+            {
+                try
+                {
                     con.Open();
-                    MySqlCommand com1 = new MySqlCommand("SELECT Vyd_z_k FROM Zberigannya where id = '4'", con);
+                    MySqlCommand com1 = new MySqlCommand("SELECT Sushka FROM Tsiny WHERE Vyd_z_k='" + comboBox1.Text + "'", con);
                     MySqlDataReader reader = com1.ExecuteReader();
                     while (reader.Read())
 
                     {
-                        MessageBox.Show( reader.GetValue(0).ToString());
-                    }  
+                        Data.wetnessParamInt = Int32.Parse(reader.GetValue(0).ToString());
+                    }
+                }
+                catch (Exception ex)
+
+                { }
+                finally
+
+                {
+                    con.Close();
+                }
+
+
+
+                if (radioButton1.Checked)
+                {
+                    try
+                    {
+                        con.Open();
+
+                        MySqlCommand com1 = new MySqlCommand("SELECT Chystka FROM Tsiny WHERE Vyd_z_k='" + comboBox1.Text + "'", con);
+                        MySqlDataReader reader = com1.ExecuteReader();
+                        while (reader.Read())
+
+                        {
+                            Data.chystkaParamInt = Int32.Parse(reader.GetValue(0).ToString());
+                        }
+                    }
+                    catch (Exception ex)
+
+                    { }
+                    finally
+
+                    {
+                        con.Close();
+                    }
+                }
+                else // radioButton1 = false
+                {
+                    Data.chystkaParamInt = 0;
+                }
             }
-
-            finally
-
+            if (comboBox2.SelectedIndex == 0)
             {
-                con.Close();
+                Data.zberParamInt = 0;
             }
+            else
+            {
+                try
+                {
+                    con.Open();
+                    MySqlCommand com1 = new MySqlCommand("SELECT " + comboBox2.Text + " FROM Zberigannya WHERE Vyd_z_k='" + comboBox1.Text + "'", con);
+                    MySqlDataReader reader = com1.ExecuteReader();
+                    while (reader.Read())
 
-  
+                    {
+                        Data.zberParamInt = Int32.Parse(reader.GetValue(0).ToString());
+                    }
+                }
+                catch (Exception ex)
 
+                { }
+                finally
+
+                {
+                    con.Close();
+                }
+            }
+            Data.Costs = (float)numericUpDown2.Value * (float)numericUpDown3.Value * (1 + Data.wetnessParamInt + Data.chystkaParamInt + (int)numericUpDown4.Value * Data.zberParamInt);
+            //label1.Text = Data.combobox1CalculateValue;
+            label13.Text = Data.Costs.ToString();
         }
 
-      */
+
     }
-
-
 }
+    
+
 
 
