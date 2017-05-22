@@ -163,12 +163,12 @@ namespace diplomaPMA
                     con.Close();
                 }
             
-
-            Data.Costs = (float)numericUpDown2.Value * (float)numericUpDown3.Value * (1 + Data.wetnessParamInt + Data.chystkaParamInt + (int)numericUpDown4.Value * Data.zberParamInt);
-            //label1.Text = Data.combobox1CalculateValue;
+            //ответ
+            Data.Costs = (float)numericUpDown2.Value * (float)numericUpDown3.Value * (1 + Data.wetnessParamInt + Data.chystkaParamInt + (int)numericUpDown4.Value * Data.zberParamInt);//ответ!
+            
             label13.Text = Data.Costs.ToString();
-            //label1.Text = Data.chystkaParamInt.ToString();
-            //label2.Text = Data.zberParamInt.ToString();
+           
+            //
             Data.wetnessParamInt = 0;
             Data.chystkaParamInt = 0;
             Data.zberParamInt = 0;

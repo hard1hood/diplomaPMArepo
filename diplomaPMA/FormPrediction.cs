@@ -19,10 +19,23 @@ namespace diplomaPMA
             InitializeComponent();
             FormClosed += FormPrediction_Closed;
         }
+        protected override void OnPaint(PaintEventArgs e) //draw a line after last param 
+        {
+            base.OnPaint(e);
+            Graphics g;
 
+            g = e.Graphics;
+
+            Pen myPen = new Pen(Color.Black);
+            myPen.Width = 2;
+            g.DrawLine(myPen, 135, 318, 670, 318);
+
+            //g.DrawLine(myPen, 1, 1, 45, 65);
+        }
         private void FormPrediction_Load(object sender, EventArgs e)
         {
             comboBox2.SelectedIndex = 0;
+            comboBox3.SelectedIndex = 0;
             con.Open();
             MySqlCommand sc = new MySqlCommand("select Vyd_z_k from Zberigannya", con);
             MySqlDataReader reader;
@@ -55,8 +68,82 @@ namespace diplomaPMA
         {
             //FormResults f = new FormResults();
             //f.Show();
-            label1.Text = Data.combobox1CalculateValue;
-            label4.Text = Data.Costs.ToString();
+
+            try
+            {
+                con.Open();
+                MySqlCommand com1 = new MySqlCommand("SELECT SUM(" + comboBox1.Text + ") FROM Prognoz", con);
+                MySqlDataReader reader = com1.ExecuteReader();
+                while (reader.Read())
+
+                {
+                    Data.sumPredictDouble = Convert.ToDouble(reader.GetValue(0).ToString());
+                }
+            }
+            catch (Exception ex)
+
+            { }
+            finally
+
+            {
+                con.Close();
+            }
+
+            try
+            {
+                con.Open();
+                MySqlCommand com1 = new MySqlCommand("SELECT COUNT(" + comboBox1.Text + ") FROM Prognoz", con);
+                MySqlDataReader reader = com1.ExecuteReader();
+                while (reader.Read())
+
+                {
+                    Data.countInt = Int32.Parse(reader.GetValue(0).ToString());
+                }
+            }
+            catch (Exception ex)
+
+            {  }
+            finally
+
+            {
+                con.Close();
+            }
+
+            try
+            {
+                con.Open();
+                MySqlCommand com1 = new MySqlCommand("SELECT " + comboBox1.Text + " FROM Prognoz WHERE Rik='2015'", con);
+                MySqlDataReader reader = com1.ExecuteReader();
+                while (reader.Read())
+
+                {
+                    Data.punkt3 = Convert.ToDouble(reader.GetValue(0).ToString());
+                }
+            }
+            catch (Exception ex)
+
+            { }
+            finally
+
+            {
+                con.Close();
+            }
+            Data.ur = Math.Round(Data.punkt3 + ((Data.punkt3 - (Data.sumPredictDouble / Data.countInt)) / Data.countInt),2);//прогнозована урожайнысть
+            label3.Text = Data.ur.ToString();
+
+            //label1.Text = Data.punkt3.ToString();
+            //label4.Text = Data.Costs.ToString();
+            Data.sumPredictDouble = 0;
+            Data.countInt = 0;
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string ID = comboBox1.SelectedValue.ToString();
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
         }
     }
 }

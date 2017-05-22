@@ -26,10 +26,10 @@ namespace diplomaPMA
         public static float Costs { get; set; }
         public static int chystkaParamInt { get; set; }
         public static int zberParamInt{ get; set; }
-        public static string combobox6CalculateValue { get; set; }
-        public static string combobox7CalculateValue { get; set; }
-        public static string combobox8CalculateValue { get; set; }
-        public static string combobox9CalculateValue { get; set; }
+        public static double sumPredictDouble { get; set; }
+        public static int countInt { get; set; }
+        public static double punkt3 { get; set; }
+        public static double ur { get; set; }
         public static string combobox10CalculateValue { get; set; }
         public static string combobox11CalculateValue { get; set; }
     }
