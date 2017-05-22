@@ -164,7 +164,7 @@ namespace diplomaPMA
                 }
             
             //ответ
-            Data.Costs = (double)numericUpDown2.Value * (double)numericUpDown3.Value * (Data.wetnessParamInt + Data.chystkaParamInt + (int)numericUpDown4.Value * Data.zberParamInt);//ответ!
+            Data.Costs = (double)numericUpDown2.Value * (double)numericUpDown3.Value * (1 + Data.wetnessParamInt + Data.chystkaParamInt + (int)numericUpDown4.Value * Data.zberParamInt);//ответ!
             
             label13.Text = Data.Costs.ToString();
            
