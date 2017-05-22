@@ -40,6 +40,7 @@ namespace diplomaPMA
         private void FormCalculation_Load(object sender, EventArgs e)
         {
             comboBox2.SelectedIndex = 0;
+            comboBox3.SelectedIndex = 0;
             con.Open();
             MySqlCommand sc = new MySqlCommand("select Vyd_z_k from Zberigannya", con);
             MySqlDataReader reader;
@@ -85,7 +86,7 @@ namespace diplomaPMA
                 Data.wetnessParamInt = 0;
             }
             else
-            {
+           
                 try
                 {
                     con.Open();
@@ -108,12 +109,15 @@ namespace diplomaPMA
 
 
 
-                if (radioButton1.Checked)
+                if (comboBox3.SelectedIndex == 0)
                 {
+                    Data.chystkaParamInt = 0;
+                }
+                else
+                
                     try
                     {
                         con.Open();
-
                         MySqlCommand com1 = new MySqlCommand("SELECT Chystka FROM Tsiny WHERE Vyd_z_k='" + comboBox1.Text + "'", con);
                         MySqlDataReader reader = com1.ExecuteReader();
                         while (reader.Read())
@@ -130,18 +134,15 @@ namespace diplomaPMA
                     {
                         con.Close();
                     }
-                }
-                else // radioButton1 = false
-                {
-                    Data.chystkaParamInt = 0;
-                }
-            }
+                
+                
+            
             if (comboBox2.SelectedIndex == 0)
             {
                 Data.zberParamInt = 0;
             }
             else
-            {
+           
                 try
                 {
                     con.Open();
@@ -161,10 +162,16 @@ namespace diplomaPMA
                 {
                     con.Close();
                 }
-            }
+            
+
             Data.Costs = (float)numericUpDown2.Value * (float)numericUpDown3.Value * (1 + Data.wetnessParamInt + Data.chystkaParamInt + (int)numericUpDown4.Value * Data.zberParamInt);
             //label1.Text = Data.combobox1CalculateValue;
             label13.Text = Data.Costs.ToString();
+            //label1.Text = Data.chystkaParamInt.ToString();
+            //label2.Text = Data.zberParamInt.ToString();
+            Data.wetnessParamInt = 0;
+            Data.chystkaParamInt = 0;
+            Data.zberParamInt = 0;
         }
 
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
@@ -210,6 +217,13 @@ namespace diplomaPMA
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             button2.Show();
             button2.PerformClick();
