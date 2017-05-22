@@ -128,11 +128,70 @@ namespace diplomaPMA
             {
                 con.Close();
             }
+
+            if (comboBox2.SelectedIndex == 0)
+            {
+                Data.zberPredInt = 0;
+            }
+            else
+
+                try
+                {
+                    con.Open();
+                    MySqlCommand com1 = new MySqlCommand("SELECT " + comboBox2.Text + " FROM Zberigannya WHERE Vyd_z_k='" + comboBox1.Text + "'", con);
+                    MySqlDataReader reader = com1.ExecuteReader();
+                    while (reader.Read())
+
+                    {
+                        Data.zberPredInt = Int32.Parse(reader.GetValue(0).ToString());
+                    }
+                }
+                catch (Exception ex)
+
+                { }
+                finally
+
+                {
+                    con.Close();
+                }
+
+            if (comboBox3.SelectedIndex == 0)
+            {
+                Data.chystkaPredInt = 0;
+            }
+            else
+
+                try
+                {
+                    con.Open();
+                    MySqlCommand com1 = new MySqlCommand("SELECT Chystka FROM Tsiny WHERE Vyd_z_k='" + comboBox1.Text + "'", con);
+                    MySqlDataReader reader = com1.ExecuteReader();
+                    while (reader.Read())
+
+                    {
+                        Data.chystkaPredInt = Int32.Parse(reader.GetValue(0).ToString());
+                    }
+                }
+                catch (Exception ex)
+
+                { }
+                finally
+
+                {
+                    con.Close();
+                }
+
+
             Data.ur = Math.Round(Data.punkt3 + ((Data.punkt3 - (Data.sumPredictDouble / Data.countInt)) / Data.countInt),2);//прогнозована урожайнысть
             label3.Text = Data.ur.ToString();
 
-            //label1.Text = Data.punkt3.ToString();
-            //label4.Text = Data.Costs.ToString();
+            label1.Text = numericUpDown3.Value.ToString();
+            label2.Text = numericUpDown4.Value.ToString();
+            label7.Text = Data.zberPredInt.ToString();
+            label8.Text = Data.chystkaPredInt.ToString();
+
+            Data.costsPrediction = Data.ur * (double)numericUpDown3.Value * (1 + (int)numericUpDown4.Value * Data.zberPredInt + Data.chystkaPredInt);
+            label13.Text = Data.costsPrediction.ToString();
             Data.sumPredictDouble = 0;
             Data.countInt = 0;
 
@@ -141,6 +200,34 @@ namespace diplomaPMA
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string ID = comboBox1.SelectedValue.ToString();
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
+        }
+
+        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
+        {
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button2.Show();
+            button2.PerformClick();
+            button2.Hide();
+        }
+
+        private void numericUpDown4_ValueChanged(object sender, EventArgs e)
+        {
             button2.Show();
             button2.PerformClick();
             button2.Hide();
