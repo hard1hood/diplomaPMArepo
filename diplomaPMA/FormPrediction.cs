@@ -185,12 +185,7 @@ namespace diplomaPMA
             Data.ur = Math.Round(Data.punkt3 + ((Data.punkt3 - (Data.sumPredictDouble / Data.countInt)) / Data.countInt),2);//прогнозована урожайнысть
             label3.Text = Data.ur.ToString();
 
-            label1.Text = numericUpDown3.Value.ToString();
-            label2.Text = numericUpDown4.Value.ToString();
-            label7.Text = Data.zberPredInt.ToString();
-            label8.Text = Data.chystkaPredInt.ToString();
-
-            Data.costsPrediction = Data.ur * (double)numericUpDown3.Value * (1 + (int)numericUpDown4.Value * Data.zberPredInt + Data.chystkaPredInt);
+            Data.costsPrediction = Data.ur * (double)numericUpDown3.Value * ((int)numericUpDown4.Value * Data.zberPredInt + Data.chystkaPredInt);//прогнозована вартисть
             label13.Text = Data.costsPrediction.ToString();
             Data.sumPredictDouble = 0;
             Data.countInt = 0;
