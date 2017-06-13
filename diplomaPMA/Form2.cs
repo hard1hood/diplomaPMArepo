@@ -20,7 +20,10 @@ namespace diplomaPMA
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
+            customCulture.NumberFormat.NumberDecimalSeparator = ".";
 
+            System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
         }
 
         protected void Form2_Closed(object sender, EventArgs e)
@@ -39,6 +42,13 @@ namespace diplomaPMA
         {
             this.Hide();
             FormPrediction f = new FormPrediction();
+            f.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormInsertInto f = new FormInsertInto();
             f.Show();
         }
     }

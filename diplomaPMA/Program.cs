@@ -17,6 +17,7 @@ namespace diplomaPMA
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            
         }
     }
     static class Data

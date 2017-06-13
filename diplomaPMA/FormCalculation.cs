@@ -209,6 +209,13 @@ namespace diplomaPMA
             button2.Hide();
         }
 
+
+
+
+
+
+
+
         private void numericUpDown4_ValueChanged(object sender, EventArgs e)
         {
             button2.Show();
