@@ -52,5 +52,16 @@ namespace diplomaPMA.Properties {
                 return ((string)(this["diplomaConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=oracle;persistsecurityinfo=True;database=d" +
+            "iploma")]
+        public string diplomaConnectionString3 {
+            get {
+                return ((string)(this["diplomaConnectionString3"]));
+            }
+        }
     }
 }

@@ -34,6 +34,8 @@ namespace diplomaPMA
         }
         private void FormPrediction_Load(object sender, EventArgs e)
         {
+           
+
             comboBox2.SelectedIndex = 0;
             comboBox3.SelectedIndex = 0;
             con.Open();
