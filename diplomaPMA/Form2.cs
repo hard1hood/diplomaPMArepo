@@ -48,7 +48,40 @@ namespace diplomaPMA
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormInsertInto f = new FormInsertInto();
+            FormInsertIntoPrognoz f = new FormInsertIntoPrognoz();
+            f.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            FormSelectPrognoz f = new FormSelectPrognoz();
+            f.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAlterTsiny f = new FormAlterTsiny();
+            f.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAlterZberigannya f = new FormAlterZberigannya();
+            f.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            FormSelectTsiny f = new FormSelectTsiny();
+            f.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            FormSelectZberigannya f = new FormSelectZberigannya();
             f.Show();
         }
     }

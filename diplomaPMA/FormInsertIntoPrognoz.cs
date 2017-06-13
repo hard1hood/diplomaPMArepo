@@ -11,10 +11,10 @@ using MySql.Data.MySqlClient;
 
 namespace diplomaPMA
 {
-    public partial class FormInsertInto : Form
+    public partial class FormInsertIntoPrognoz : Form
     {
         MySqlConnection con = new MySqlConnection("user id=root;password=oracle;server=localhost;database=diploma;");
-        public FormInsertInto()
+        public FormInsertIntoPrognoz()
         {
             InitializeComponent();
             FormClosed += FormInsertInto_Closed;
@@ -96,9 +96,16 @@ namespace diplomaPMA
             finally
 
             {
-
                 con.Close();
+                FormSelectPrognoz f = new FormSelectPrognoz();
+                f.Show();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormSelectPrognoz f = new FormSelectPrognoz();
+            f.Show();
         }
     }
 }

@@ -69,23 +69,53 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAlterTsiny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlterTsiny.Designer.cs">
+      <DependentUpon>FormAlterTsiny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAlterZberigannya.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlterZberigannya.Designer.cs">
+      <DependentUpon>FormAlterZberigannya.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCalculation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCalculation.Designer.cs">
       <DependentUpon>FormCalculation.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInsertInto.cs">
+    <Compile Include="FormInsertIntoPrognoz.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInsertInto.Designer.cs">
-      <DependentUpon>FormInsertInto.cs</DependentUpon>
+    <Compile Include="FormInsertIntoPrognoz.Designer.cs">
+      <DependentUpon>FormInsertIntoPrognoz.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrediction.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPrediction.Designer.cs">
       <DependentUpon>FormPrediction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectPrognoz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectPrognoz.Designer.cs">
+      <DependentUpon>FormSelectPrognoz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectTsiny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectTsiny.Designer.cs">
+      <DependentUpon>FormSelectTsiny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectZberigannya.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectZberigannya.Designer.cs">
+      <DependentUpon>FormSelectZberigannya.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,14 +125,29 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAlterTsiny.resx">
+      <DependentUpon>FormAlterTsiny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAlterZberigannya.resx">
+      <DependentUpon>FormAlterZberigannya.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCalculation.resx">
       <DependentUpon>FormCalculation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInsertInto.resx">
-      <DependentUpon>FormInsertInto.cs</DependentUpon>
+    <EmbeddedResource Include="FormInsertIntoPrognoz.resx">
+      <DependentUpon>FormInsertIntoPrognoz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrediction.resx">
       <DependentUpon>FormPrediction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectPrognoz.resx">
+      <DependentUpon>FormSelectPrognoz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectTsiny.resx">
+      <DependentUpon>FormSelectTsiny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectZberigannya.resx">
+      <DependentUpon>FormSelectZberigannya.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
