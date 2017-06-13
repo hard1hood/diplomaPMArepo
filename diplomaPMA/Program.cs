@@ -31,6 +31,7 @@ namespace diplomaPMA
         public static int countInt { get; set; }
         public static double punkt3 { get; set; }
         public static double ur { get; set; }
+        public static int lastYear { get; set; }
         public static double costsPrediction { get; set; }
         public static int zberPredInt { get; set; }
         public static int chystkaPredInt { get; set; }

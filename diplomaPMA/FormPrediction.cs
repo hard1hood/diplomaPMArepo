@@ -111,10 +111,32 @@ namespace diplomaPMA
                 con.Close();
             }
 
+
             try
             {
                 con.Open();
-                MySqlCommand com1 = new MySqlCommand("SELECT " + comboBox1.Text + " FROM Prognoz WHERE Rik='2015'", con);
+                MySqlCommand com1 = new MySqlCommand("SELECT max(rik) FROM Prognoz", con);
+                MySqlDataReader reader = com1.ExecuteReader();
+                while (reader.Read())
+
+                {
+                    Data.lastYear = Int32.Parse(reader.GetValue(0).ToString());
+                }
+            }
+            catch (Exception ex)
+
+            { }
+            finally
+
+            {
+                con.Close();
+            }
+
+            try
+            {
+                con.Open();
+      
+                MySqlCommand com1 = new MySqlCommand("SELECT " + comboBox1.Text + " FROM Prognoz WHERE Rik='"+Data.lastYear+"'", con);
                 MySqlDataReader reader = com1.ExecuteReader();
                 while (reader.Read())
 
