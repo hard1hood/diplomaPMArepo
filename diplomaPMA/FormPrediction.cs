@@ -263,5 +263,12 @@ namespace diplomaPMA
             FormDetails f = new FormDetails();
             f.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormPredictionG f = new FormPredictionG();
+            f.Show();
+        }
     }
 }
