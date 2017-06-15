@@ -80,6 +80,11 @@ namespace diplomaPMA
         private void button2_Click(object sender, EventArgs e)
         {
             Data.combobox1CalculateValue = comboBox1.Text;
+            Data.wetnessParamInt = 0;
+            Data.chystkaParamInt = 0;
+            Data.zberParamInt = 0;
+            Data.zberTermDouble = 0;
+            Data.vsegoZerna = 0;
 
             if ((int)numericUpDown1.Value < 14)
             {
@@ -162,16 +167,16 @@ namespace diplomaPMA
                 {
                     con.Close();
                 }
-            
+
             //ответ
-            Data.Costs = (double)numericUpDown2.Value * (double)numericUpDown3.Value * (1 + Data.wetnessParamInt + Data.chystkaParamInt + (int)numericUpDown4.Value * Data.zberParamInt);//ответ!
-            
+
+            Data.zberTermDouble = (int)numericUpDown4.Value;
+            Data.Costs = (double)numericUpDown2.Value * (double)numericUpDown3.Value * (1 + Data.wetnessParamInt + Data.chystkaParamInt + Data.zberTermDouble * Data.zberParamInt);//ответ!
             label13.Text = Data.Costs.ToString();
-           
+            Data.vsegoZerna = (double)numericUpDown2.Value * (double)numericUpDown3.Value;
+            
             //
-            Data.wetnessParamInt = 0;
-            Data.chystkaParamInt = 0;
-            Data.zberParamInt = 0;
+            
         }
 
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
@@ -235,6 +240,13 @@ namespace diplomaPMA
             button2.Show();
             button2.PerformClick();
             button2.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Data.flag = 1;
+            FormDetails f = new FormDetails();
+            f.Show();
         }
     }
 }

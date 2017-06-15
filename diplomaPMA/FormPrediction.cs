@@ -70,7 +70,11 @@ namespace diplomaPMA
         {
             //FormResults f = new FormResults();
             //f.Show();
-
+            Data.sumPredictDouble = 0;
+            Data.countInt = 0;
+            Data.zberTermDouble = 0;
+            Data.vsegoZerna = 0;
+            //
             try
             {
                 con.Open();
@@ -136,7 +140,7 @@ namespace diplomaPMA
             {
                 con.Open();
       
-                MySqlCommand com1 = new MySqlCommand("SELECT " + comboBox1.Text + " FROM Prognoz WHERE Rik='"+Data.lastYear+"'", con);
+                MySqlCommand com1 = new MySqlCommand("SELECT " + comboBox1.Text + " FROM Prognoz WHERE Rik='"+ Data.lastYear +"'", con);
                 MySqlDataReader reader = com1.ExecuteReader();
                 while (reader.Read())
 
@@ -205,15 +209,16 @@ namespace diplomaPMA
                     con.Close();
                 }
 
+            Data.zberTermDouble = (int)numericUpDown4.Value * Data.zberPredInt;
 
             Data.ur = Math.Round(Data.punkt3 + ((Data.punkt3 - (Data.sumPredictDouble / Data.countInt)) / Data.countInt),2);//прогнозована урожайнысть
             label3.Text = Data.ur.ToString();
 
-            Data.costsPrediction = Data.ur * (double)numericUpDown3.Value * (1 + (int)numericUpDown4.Value * Data.zberPredInt + Data.chystkaPredInt);//прогнозована вартисть
+            Data.costsPrediction = Data.ur * (double)numericUpDown3.Value * (1 + Data.zberTermDouble + Data.chystkaPredInt);//прогнозована вартисть
             label13.Text = Data.costsPrediction.ToString();
-            Data.sumPredictDouble = 0;
-            Data.countInt = 0;
 
+            
+            Data.vsegoZerna = Convert.ToDouble(label3.Text) * (double)numericUpDown3.Value;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -250,6 +255,13 @@ namespace diplomaPMA
             button2.Show();
             button2.PerformClick();
             button2.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Data.flag = 2;
+            FormDetails f = new FormDetails();
+            f.Show();
         }
     }
 }
