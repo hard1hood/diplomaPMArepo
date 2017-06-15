@@ -27,6 +27,7 @@ namespace diplomaPMA
 
         private void FormPredictionG_Load(object sender, EventArgs e)
         {
+            //added tag for first release
             try
             {
                 con.Open();
